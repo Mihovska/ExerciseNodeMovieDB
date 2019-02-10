@@ -9,6 +9,8 @@ function get_content_type(path){
         return 'image/png';
     } else if (path.endsWith('jpg')){
         return 'image/jpg';
+    } else if (path.endsWith('.js')){
+        return 'text/javascript'
     }
 }
 
@@ -25,5 +27,7 @@ module.exports = (req, res) => {
             res.write(data);
             res.end();
         });
+    } else {
+        return true;
     }
 }
